@@ -14,11 +14,11 @@
 - TypeScript
 - TBD ETC
 
-## Component Heirarchy
-
-TBD
-
 ## Wireframes
 
 ![Mobile Landing Page](https://i.imgur.com/e70GDZx.jpeg)
 ![Desktop Landing Page](https://i.imgur.com/mKv0NuL.jpeg)
+
+## Component Heirarchy
+
+![Model 1 Component Heirarchy](https://i.imgur.com/iJquFu2.jpeg)
