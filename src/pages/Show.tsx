@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 function Show() {
   const aPause: any = useLoaderData();
@@ -20,6 +20,8 @@ function Show() {
       </h2>
       <h3>What came up during this session:</h3>
       <p>{aPause.thoughts}</p>
+      <hr />
+      <Link to="/index">Go back.</Link>
     </div>
   );
 }

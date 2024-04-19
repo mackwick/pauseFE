@@ -1,12 +1,16 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Pause() {
-  // const date: string = pause.date.split("T")[0];
+function Pause({ pause }: any) {
+  const date: string = pause.date.split("T")[0];
+  const displayDate: string =
+    date.split("-")[1] + "." + date.split("-")[2] + "." + date.split("-")[0];
 
   return (
-    <div className="pause">
-      <h1>thisis a pause</h1>
-    </div>
+    <Link to={`/${pause.id}`} className="pause">
+      <h3>
+        {pause.length} minute meditation on {displayDate}
+      </h3>
+    </Link>
   );
 }
 
