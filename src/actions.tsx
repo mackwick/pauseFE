@@ -7,7 +7,7 @@ export const createAction = async ({ request }: any) => {
   const formData = await request.formData();
 
   const newPause = {
-    length: formData.get("length"),
+    length: parseInt(formData.get("length")),
     before: formData.get("before"),
     after: formData.get("after"),
     thoughts: formData.get("thoughts"),

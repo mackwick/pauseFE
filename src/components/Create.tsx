@@ -6,10 +6,10 @@ function Create() {
       <Form action="/create" method="post">
         <label htmlFor="length">
           How many minutes did you meditate?
-          <input type="text" name="length" id="length" />
+          <input type="number" name="length" id="length" />
         </label>
         <label htmlFor="before">
-          How long did feel before?
+          How did you feel before?
           <input type="text" name="before" id="before" />
         </label>
         <label htmlFor="after">
