@@ -1,5 +1,12 @@
+import Create from "../components/Create";
+
 function Landing() {
-  return <h1>This is the Landing</h1>;
+  return (
+    <div className="landing-container">
+      <h1>Take a Pause</h1>
+      <Create />
+    </div>
+  );
 }
 
 export default Landing;
