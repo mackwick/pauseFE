@@ -1,5 +1,6 @@
 import Forms from "../components/Form";
 import Timer from "../components/Timer";
+import { Form } from "react-router-dom";
 
 const Landing: React.FC = () => {
   return (
@@ -15,7 +16,18 @@ const Landing: React.FC = () => {
         defaultval_thoughts=""
       />
       <hr />
-      <Timer seconds={15} />
+      <Form>
+        <input type="number" className="timesetter" />
+        <button
+          onClick={(event): any => {
+            event.preventDefault();
+          }}
+        >
+          Set timer
+        </button>
+      </Form>
+
+      <Timer seconds={66} />
     </div>
   );
 };

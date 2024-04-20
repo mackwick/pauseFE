@@ -4,6 +4,20 @@ type Props = {
   seconds: number;
 };
 
+const formatTime = (time: number) => {
+  let minutes: number | string = Math.floor(time / 60);
+  let seconds: number | string = Math.floor(time - minutes * 60);
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  return minutes + ":" + seconds;
+};
+
 const Timer: React.FC<Props> = ({ seconds }) => {
   const [countdown, setCountdown] = useState(seconds);
   const time: any = useRef();
@@ -15,9 +29,16 @@ const Timer: React.FC<Props> = ({ seconds }) => {
     return () => clearInterval(time.current);
   }, []);
 
+  useEffect(() => {
+    if (countdown <= 0) {
+      clearInterval(time.current);
+      alert("END");
+    }
+  });
+
   return (
     <div className="timer-container">
-      <h2>Countdown: {countdown}</h2>
+      <h2>Countdown: {formatTime(countdown)}</h2>
     </div>
   );
 };
