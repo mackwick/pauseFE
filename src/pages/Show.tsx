@@ -1,7 +1,7 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
 import Forms from "../components/Form";
 
-const Show = () => {
+const Show: React.FC = () => {
   const aPause: any = useLoaderData();
   const date: string = aPause.date.split("T")[0];
   const displayDate: string =

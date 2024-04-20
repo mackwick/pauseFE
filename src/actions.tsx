@@ -49,9 +49,13 @@ export const updateAction = async ({ request, params }: any) => {
 
 //DELETE
 export const deleteAction = async ({ params }: any) => {
-  const id: number = parseInt(params.id);
-  await fetch(`${URL}/${id}`, {
-    method: "delete",
-  });
-  return redirect(`/index`);
+  if (params === undefined) {
+    return <h1>That is undefined. Try again.</h1>;
+  } else {
+    const id: number = parseInt(params.id);
+    await fetch(`${URL}/${id}`, {
+      method: "delete",
+    });
+    return redirect(`/index`);
+  }
 };

@@ -1,6 +1,6 @@
 import Forms from "../components/Form";
 
-function Landing() {
+const Landing: React.FC = () => {
   return (
     <div className="landing-container">
       <h1>Take a Pause</h1>
@@ -15,6 +15,6 @@ function Landing() {
       />
     </div>
   );
-}
+};
 
 export default Landing;
