@@ -1,6 +1,7 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
+import Forms from "../components/Form";
 
-function Show() {
+const Show = () => {
   const aPause: any = useLoaderData();
   const date: string = aPause.date.split("T")[0];
   const displayDate: string =
@@ -22,45 +23,15 @@ function Show() {
       <p>{aPause.thoughts}</p>
       <hr />
       <h3>Actions</h3>
-      <Form action={`/update/${aPause.id}`} method="put">
-        <label htmlFor="length">
-          How many minutes did you meditate?
-          <input
-            type="number"
-            name="length"
-            id="length"
-            defaultValue={aPause.length}
-          />
-        </label>
-        <label htmlFor="before">
-          How did you feel before?
-          <input
-            type="text"
-            name="before"
-            id="before"
-            defaultValue={aPause.before}
-          />
-        </label>
-        <label htmlFor="after">
-          How did you feel after?
-          <input
-            type="text"
-            name="after"
-            id="after"
-            defaultValue={aPause.after}
-          />
-        </label>
-        <label htmlFor="thoughts">
-          What thoughts came up?
-          <input
-            type="text"
-            name="thoughts"
-            id="thoughts"
-            defaultValue={aPause.thoughts}
-          />
-        </label>
-        <button>Update entry.</button>
-      </Form>
+      <Forms
+        action={`/update/${aPause.id}`}
+        method="put"
+        buttontxt="Update Pause"
+        defaultval_after={aPause.after}
+        defaultval_before={aPause.before}
+        defaultval_length={aPause.length}
+        defaultval_thoughts={aPause.thoughts}
+      />
       <Form action={`/delete/${aPause.id}`} method="post">
         <button>Delete</button>
       </Form>
@@ -68,6 +39,6 @@ function Show() {
       <Link to="/index">Go back.</Link>
     </div>
   );
-}
+};
 
 export default Show;

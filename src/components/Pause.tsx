@@ -1,17 +1,27 @@
 import { Link } from "react-router-dom";
 
-function Pause({ pause }: any) {
-  const date: string = pause.date.split("T")[0];
+type Props = {
+  date: string;
+  id: number;
+  length: number;
+};
+
+const Pause: React.FC<Props> = ({ date, id, length }) => {
+  const splitDate: string = date.split("T")[0]; //"2024-04-18"
   const displayDate: string =
-    date.split("-")[1] + "." + date.split("-")[2] + "." + date.split("-")[0];
+    splitDate.split("-")[1] +
+    "." +
+    splitDate.split("-")[2] +
+    "." +
+    splitDate.split("-")[0];
 
   return (
-    <Link to={`/${pause.id}`} className="pause">
+    <Link to={`/${id}`} className="pause">
       <h3>
-        {pause.length} minute meditation on {displayDate}
+        {length}-minute meditation on {displayDate}
       </h3>
     </Link>
   );
-}
+};
 
 export default Pause;
