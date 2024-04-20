@@ -1,4 +1,5 @@
 import Forms from "../components/Form";
+import Timer from "../components/Timer";
 
 const Landing: React.FC = () => {
   return (
@@ -13,6 +14,8 @@ const Landing: React.FC = () => {
         defaultval_length=""
         defaultval_thoughts=""
       />
+      <hr />
+      <Timer seconds={15} />
     </div>
   );
 };
