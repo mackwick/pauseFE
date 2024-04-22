@@ -1,8 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-
-type Props = {
-  seconds: number;
-};
+import { redirect, useLoaderData } from "react-router-dom";
 
 const formatTime = (time: number) => {
   let minutes: number | string = Math.floor(time / 60);
@@ -18,8 +15,10 @@ const formatTime = (time: number) => {
   return minutes + ":" + seconds;
 };
 
-const Timer: React.FC<Props> = ({ seconds }) => {
-  const [countdown, setCountdown] = useState(seconds);
+const Timer: React.FC = () => {
+  const allPauses: any = useLoaderData();
+  const newPause = allPauses[allPauses.length - 1];
+  const [countdown, setCountdown] = useState(newPause.length);
   const time: any = useRef();
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const Timer: React.FC<Props> = ({ seconds }) => {
   useEffect(() => {
     if (countdown <= 0) {
       clearInterval(time.current);
-      alert("END");
+      redirect("/");
     }
   });
 

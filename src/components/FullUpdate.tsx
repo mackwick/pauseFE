@@ -10,7 +10,7 @@ type Props = {
   defaultval_thoughts: string;
 };
 
-const Forms: React.FC<Props> = ({
+const FullUpdate: React.FC<Props> = ({
   action,
   method,
   buttontxt,
@@ -64,4 +64,4 @@ const Forms: React.FC<Props> = ({
   );
 };
 
-export default Forms;
+export default FullUpdate;

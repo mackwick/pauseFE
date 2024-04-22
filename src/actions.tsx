@@ -9,8 +9,8 @@ export const createAction = async ({ request }: any) => {
   const newPause = {
     length: parseInt(formData.get("length")),
     before: formData.get("before"),
-    after: formData.get("after"),
-    thoughts: formData.get("thoughts"),
+    after: "",
+    thoughts: "",
     user: "seed",
   };
 
@@ -21,7 +21,7 @@ export const createAction = async ({ request }: any) => {
     },
     body: JSON.stringify(newPause),
   });
-  return redirect("/index");
+  return redirect("/pause");
 };
 
 //UPDATE

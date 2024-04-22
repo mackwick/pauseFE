@@ -1,5 +1,5 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
-import Forms from "../components/Form";
+import Forms from "../components/FullUpdate";
 
 const Show: React.FC = () => {
   const aPause: any = useLoaderData();
