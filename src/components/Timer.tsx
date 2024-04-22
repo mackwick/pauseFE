@@ -18,7 +18,7 @@ const formatTime = (time: number) => {
 const Timer: React.FC = () => {
   const allPauses: any = useLoaderData();
   const newPause = allPauses[allPauses.length - 1];
-  const [countdown, setCountdown] = useState(newPause.length);
+  const [countdown, setCountdown] = useState(newPause.length * 60);
   const time: any = useRef();
 
   useEffect(() => {
