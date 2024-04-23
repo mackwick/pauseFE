@@ -22,22 +22,24 @@ const Create2Form: React.FC<Props> = ({
   return (
     <div className="create-container">
       <Form action={action} method={method}>
-        <label htmlFor="length">
+        <label htmlFor="length" className="hide">
           How many minutes did you meditate?
           <input
             type="number"
             name="length"
             id="length"
             defaultValue={defaultval_length}
+            className="hide"
           />
         </label>
-        <label htmlFor="before">
+        <label htmlFor="before" className="hide">
           How did you feel before?
           <input
             type="text"
             name="before"
             id="before"
             defaultValue={defaultval_before}
+            className="hide"
           />
         </label>
         <label htmlFor="after">

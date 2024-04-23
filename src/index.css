@@ -47,3 +47,7 @@ body {
 .create1-form > label {
   padding: 20px 5px;
 }
+
+.hide {
+  display: none;
+}
