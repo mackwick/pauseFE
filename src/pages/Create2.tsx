@@ -1,4 +1,4 @@
-import { useLoaderData, Form } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Create2Form from "../components/CreatePt2";
 
 const Create2: React.FC = () => {

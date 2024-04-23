@@ -1,4 +1,3 @@
-import { MouseEventHandler } from "react";
 import { Form, FormMethod } from "react-router-dom";
 
 type Props = {

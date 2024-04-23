@@ -17,25 +17,30 @@ const formatTime = (time: number) => {
 
 const Timer: React.FC = () => {
   const allPauses: any = useLoaderData();
-  const newPause = allPauses[allPauses.length - 1];
-  const [countdown, setCountdown] = useState(newPause.length * 60);
+  const [countdown, setCountdown] = useState(NaN);
   const time: any = useRef();
   const navigate = useNavigate();
 
   useEffect(() => {
+    const newPause: any = allPauses[allPauses.length - 1];
+    if (newPause) {
+      setCountdown(newPause.length * 60);
+    }
     time.current = setInterval(() => {
       setCountdown((prev: number) => prev - 1);
     }, 1000);
     return () => clearInterval(time.current);
-  });
+  }, [allPauses]);
 
   useEffect(() => {
     if (countdown <= 0) {
       clearInterval(time.current);
-      alert("End");
-      navigate(`/create2/${newPause.id}`);
+      const newPause: any = allPauses[allPauses.length - 1];
+      if (newPause) {
+        navigate(`/create2/${newPause.id}`);
+      }
     }
-  });
+  }, [countdown, allPauses, navigate]);
 
   return (
     <div className="timer-container">
