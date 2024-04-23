@@ -1,8 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-
-type Props = {
-  seconds: number;
-};
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const formatTime = (time: number) => {
   let minutes: number | string = Math.floor(time / 60);
@@ -18,23 +15,32 @@ const formatTime = (time: number) => {
   return minutes + ":" + seconds;
 };
 
-const Timer: React.FC<Props> = ({ seconds }) => {
-  const [countdown, setCountdown] = useState(seconds);
+const Timer: React.FC = () => {
+  const allPauses: any = useLoaderData();
+  const [countdown, setCountdown] = useState(NaN);
   const time: any = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const newPause: any = allPauses[allPauses.length - 1];
+    if (newPause) {
+      setCountdown(newPause.length * 60);
+    }
     time.current = setInterval(() => {
       setCountdown((prev: number) => prev - 1);
     }, 1000);
     return () => clearInterval(time.current);
-  }, []);
+  }, [allPauses]);
 
   useEffect(() => {
     if (countdown <= 0) {
       clearInterval(time.current);
-      alert("END");
+      const newPause: any = allPauses[allPauses.length - 1];
+      if (newPause) {
+        navigate(`/create2/${newPause.id}`);
+      }
     }
-  });
+  }, [countdown, allPauses, navigate]);
 
   return (
     <div className="timer-container">

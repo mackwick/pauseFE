@@ -4,7 +4,7 @@
 - **Description: A mobile-first web application for tracking your daily meditation. Includes a timer, journal entries, a question of the day to meditate on, and reminders about why you started meditating when you miss a few days.**
 
 - GitHub: https://github.com/mackwick/pauseFE.git
-- Deployed Frontend:
+- Deployed Frontend: https://takeapause.netlify.app/
 
 ## Dependencies
 
@@ -21,4 +21,4 @@
 
 ## Component Heirarchy
 
-![Model 1 Component Heirarchy](https://i.imgur.com/iJquFu2.jpeg)
+XXXXXXX

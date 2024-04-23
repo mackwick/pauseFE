@@ -9,8 +9,8 @@ export const createAction = async ({ request }: any) => {
   const newPause = {
     length: parseInt(formData.get("length")),
     before: formData.get("before"),
-    after: formData.get("after"),
-    thoughts: formData.get("thoughts"),
+    after: "",
+    thoughts: "",
     user: "seed",
   };
 
@@ -20,6 +20,29 @@ export const createAction = async ({ request }: any) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newPause),
+  });
+  return redirect("/pause");
+};
+
+//CREATE PT 2/PARTIAL UPDATE
+export const create2Action = async ({ request, params }: any) => {
+  const id: number = parseInt(params.id);
+  const formData = await request.formData();
+
+  const updatedPause = {
+    length: parseInt(formData.get("length")),
+    before: formData.get("before"),
+    after: formData.get("after"),
+    thoughts: formData.get("thoughts"),
+    user: "seed",
+  };
+
+  await fetch(`${URL}/${id}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedPause),
   });
   return redirect("/index");
 };
