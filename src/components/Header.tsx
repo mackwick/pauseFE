@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <div className="header">
       <h1>Pause</h1>
-      <p>nav stuff</p>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/index">All Pauses</Link>
+      </nav>
     </div>
   );
 }

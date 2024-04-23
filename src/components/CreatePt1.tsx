@@ -9,8 +9,8 @@ type Props = {
 
 const Create1: React.FC<Props> = ({ action, method, buttontxt }) => {
   return (
-    <div className="create-container">
-      <Form action={action} method={method}>
+    <div className="create1-container">
+      <Form action={action} method={method} className="create1-form">
         <label htmlFor="length">
           How many minutes would you like to meditate?
           <input type="number" name="length" id="length" />

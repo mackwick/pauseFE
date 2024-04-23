@@ -8,8 +8,14 @@ import Index from "./pages/Index";
 import Show from "./pages/Show";
 import Landing from "./pages/Landing";
 import Time from "./pages/Time";
+import Create2 from "./pages/Create2";
 import { indexLoader, showLoader } from "./loaders";
-import { createAction, deleteAction, updateAction } from "./actions";
+import {
+  createAction,
+  create2Action,
+  deleteAction,
+  updateAction,
+} from "./actions";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +25,12 @@ const router = createBrowserRouter(
       <Route path="/index" element={<Index />} loader={indexLoader} />
       <Route path="/:id" element={<Show />} loader={showLoader} />
       <Route path="/create" action={createAction} />
+      <Route
+        path="/create2/:id"
+        element={<Create2 />}
+        action={create2Action}
+        loader={showLoader}
+      />
       <Route path="/update/:id" action={updateAction} />
       <Route path="/delete/:id" action={deleteAction} />
     </Route>
