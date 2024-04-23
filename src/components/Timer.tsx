@@ -44,7 +44,7 @@ const Timer: React.FC = () => {
 
   return (
     <div className="timer-container">
-      <h2>Countdown: {formatTime(countdown)}</h2>
+      <h2>{formatTime(countdown)}</h2>
     </div>
   );
 };

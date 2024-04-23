@@ -21,7 +21,7 @@ const Create2Form: React.FC<Props> = ({
 }) => {
   return (
     <div className="create-container">
-      <Form action={action} method={method}>
+      <Form action={action} method={method} className="create-form">
         <label htmlFor="length" className="hide">
           How many minutes did you meditate?
           <input
@@ -43,21 +43,22 @@ const Create2Form: React.FC<Props> = ({
           />
         </label>
         <label htmlFor="after">
-          How did you feel after?
+          How are you doing now (in five words or less)?
           <input
             type="text"
             name="after"
             id="after"
             defaultValue={defaultval_after}
+            className="form-input"
           />
         </label>
         <label htmlFor="thoughts">
-          What thoughts came up?
-          <input
-            type="text"
+          Did any thoughts come up?
+          <textarea
             name="thoughts"
             id="thoughts"
             defaultValue={defaultval_thoughts}
+            className="form-input"
           />
         </label>
         <button>{buttontxt}</button>

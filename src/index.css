@@ -1,7 +1,8 @@
 :root {
-  --light: white;
-  --dark: black;
-  --flair: blue;
+  --light: #eff9f0;
+  --dark: #61686b;
+  --flair: #668d90;
+  --bgopaque: rgba(255, 255, 255, 0.5);
 }
 
 *,
@@ -17,37 +18,127 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: skyblue;
-  font-family: "Rethink Sans", sans-serif;
+  background-image: url(./assets/sean-oulashin-KMn4VEeEPR8-unsplash.jpg);
+  background-size: 300%;
+  background-position: top;
+  font-family: "PT Sans Narrow", sans-serif;
 }
+
+.link,
+button {
+  font: inherit;
+  text-decoration: none;
+  color: var(--flair);
+}
+
+button {
+  background-color: var(--flair);
+  color: var(--light);
+  opacity: 90%;
+  font-style: bold;
+  font-size: 20px;
+  border-radius: 5%;
+  width: 7em;
+  margin: 0 auto;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/*******************************/
+/************HEADER*************/
+/*******************************/
 
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+  background-color: var(--bgopaque);
+  color: var(--light);
+  border: 1px solid var(--light);
+  width: 100dvw;
 }
 
 .header > nav {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
-.create1-container {
+.link > h1 {
+  font-size: 55px;
+}
+
+/*******************************/
+/*********** LANDING ************/
+/*******************************/
+
+.landing-container,
+.timer-container,
+.create2-page {
+  background-color: var(--bgopaque);
+  margin: 0 5%;
+  margin-top: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light);
+  border-radius: 3%;
+}
+
+/********* CREATE PT. 1 FORM **********/
+
+.create-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.create1-form {
+.create-form {
   display: flex;
   flex-direction: column;
+  color: var(--dark);
+  font-size: 20px;
 }
 
-.create1-form > label {
+.create-form > label {
   padding: 20px 5px;
 }
 
+.form-input {
+  width: 100%;
+  padding-top: 5px;
+  margin-top: 5px;
+  background-color: whitesmoke;
+  color: var(--flair);
+}
+
+/**************** TIMER ***************/
+
+.timer-container {
+  border: none;
+  background: none;
+}
+
+.timer-container > h2 {
+  font-size: 150px;
+  color: whitesmoke;
+}
+
+/********* CREATE PT. 2 FORM **********/
+
 .hide {
   display: none;
+}
+
+.create-form > textarea {
+  min-height: 60px;
+  line-height: 20px;
+  word-wrap: normal;
+  font: inherit;
 }

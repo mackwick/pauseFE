@@ -15,7 +15,7 @@ const Create2: React.FC = () => {
   }, [Create2Form]);
 
   return (
-    <div className="create2">
+    <div className="create2-page">
       <Create2Form
         action={`/create2/${aPause.id}`}
         method="put"
