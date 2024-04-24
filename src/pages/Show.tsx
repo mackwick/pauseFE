@@ -40,7 +40,7 @@ const Show: React.FC = () => {
           <Forms
             action={`/update/${aPause.id}`}
             method="put"
-            buttontxt="Update Pause"
+            buttontxt="Update"
             defaultval_after={aPause.after}
             defaultval_before={aPause.before}
             defaultval_length={aPause.length}
@@ -52,7 +52,11 @@ const Show: React.FC = () => {
             {showForm ? "Go back" : "Edit"}
           </button>
 
-          <Form action={`/delete/${aPause.id}`} method="post">
+          <Form
+            className="delete-button"
+            action={`/delete/${aPause.id}`}
+            method="post"
+          >
             <button>Delete</button>
           </Form>
         </div>

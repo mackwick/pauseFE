@@ -21,7 +21,7 @@ const Pause: React.FC<Props> = ({ date, id, length, before, after }) => {
     <div className="pause">
       <Link to={`/${id}`} className="link">
         <p>
-          {displayDate} ({length}-minutes):
+          {displayDate} ({length}-min.):
         </p>
         <p>
           From "{before}" to "{after}"

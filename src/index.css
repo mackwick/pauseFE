@@ -48,9 +48,7 @@ button:hover {
   color: var(--dark);
 }
 
-/*******************************/
-/************HEADER*************/
-/*******************************/
+/************ HEADER *************/
 
 .header {
   display: flex;
@@ -73,9 +71,7 @@ button:hover {
   font-size: 55px;
 }
 
-/*******************************/
 /*********** LANDING ************/
-/*******************************/
 
 .landing-container,
 .timer-container,
@@ -149,6 +145,7 @@ button:hover {
 
 .index {
   margin-top: 10%;
+  padding: 0 10px;
 }
 
 .index > h2 {
@@ -190,7 +187,7 @@ button:hover {
 }
 
 .show-content {
-  padding: 15px 0;
+  padding: 15px 10px;
   text-align: left;
   color: var(--flair);
 }
@@ -213,4 +210,150 @@ button:hover {
 
 .go-back-button {
   margin: 0;
+}
+
+/***********************************************/
+/************  RESPONSIEVENESS ******************/
+/***********************************************/
+
+@media screen and (min-width: 500px) {
+  body {
+    background-size: 250%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    background-size: 200%;
+  }
+  .landing-container,
+  .timer-container,
+  .create2-page,
+  .index,
+  .show {
+    margin: 15% 20%;
+  }
+}
+
+@media screen and (min-width: 975px) {
+  body {
+    background-size: 150%;
+  }
+
+  .landing-container,
+  .timer-container,
+  .create2-page,
+  .index,
+  .show {
+    margin: 10% 20%;
+  }
+
+  .timer-container > h2 {
+    font-size: 250px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-size: 100%;
+  }
+
+  .landing-container,
+  .timer-container,
+  .create2-page,
+  .index,
+  .show {
+    margin: 10% 20%;
+  }
+
+  .page-button {
+    margin: 0 8px;
+  }
+
+  .go-back-button,
+  .delete-button > button {
+    margin: 0 20px;
+  }
+
+  .show-content > h2 {
+    font-size: 36px;
+  }
+
+  .show-content > p,
+  .show-content > h6 {
+    font-size: 24px;
+  }
+  nav > .link {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1550px) {
+  .landing-container,
+  .timer-container,
+  .create2-page {
+    margin: 10% 30%;
+    padding: 10px;
+  }
+
+  .index,
+  .show {
+    margin: 5% 25%;
+  }
+
+  .page-button {
+    font-size: 18px;
+  }
+
+  .create-form > label {
+    padding: 20px 5px;
+  }
+
+  .form-input {
+    margin: 10px 0;
+  }
+
+  button {
+    font-size: 26px;
+  }
+
+  .timer-container > h2 {
+    font-size: 275px;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .pause p {
+    font-size: 18px;
+  }
+
+  .update-container input,
+  .update-container textarea {
+    margin: 0;
+  }
+
+  .update-container label {
+    margin-top: 0;
+    padding-top: 5px;
+  }
+
+  .link > h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (min-width: 1850px) {
+  body {
+    background-size: 100%;
+  }
+  nav > .link {
+    font-size: 24px;
+  }
+
+  .timer-container > h2 {
+    font-size: 325px;
+  }
+
+  .pause p {
+    font-size: 20px;
+  }
 }

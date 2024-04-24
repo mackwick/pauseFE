@@ -20,7 +20,7 @@ const FullUpdate: React.FC<Props> = ({
   defaultval_thoughts,
 }) => {
   return (
-    <div className="create-container">
+    <div className="create-container update-container">
       <Form action={action} method={method} className="create-form">
         <label htmlFor="length">
           How many minutes did you meditate?

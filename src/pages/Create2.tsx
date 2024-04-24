@@ -19,7 +19,7 @@ const Create2: React.FC = () => {
       <Create2Form
         action={`/create2/${aPause.id}`}
         method="put"
-        buttontxt="Update Pause"
+        buttontxt="Log Session"
         defaultval_after={""}
         defaultval_before={aPause.before}
         defaultval_length={aPause.length}
