@@ -54,21 +54,82 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: var(--bgopaque);
   color: var(--light);
   border: 1px solid var(--light);
   width: 100dvw;
 }
 
+.offscreen-menu {
+  background-color: var(--flair);
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  left: -450px;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+
+#ham-toggle {
+  display: none;
+}
+
+nav:has(#ham-toggle:checked) .offscreen-menu {
+  left: 0;
+}
+
+.hamburger-menu:hover {
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  margin-top: 30px;
+  padding-top: 20px;
+  height: 50px;
+  width: 50px;
+  margin-right: auto;
+  position: relative;
+}
+
+.hamburger-menu span {
+  height: 5px;
+  width: 100%;
+  background-color: var(--flair);
+  border-radius: 25px;
+  position: absolute;
+  transition: 0.3s ease;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top: 50%;
+}
+
+.hamburger-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.offscreen-menu > .link {
+  padding: 20px 0 0 20px;
+  color: var(--light);
+  font-size: 22px;
+}
+
 .header > nav {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .link > h1 {
   font-size: 55px;
+  padding: 20px;
 }
 
 /*********** LANDING ************/
