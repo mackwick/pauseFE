@@ -4,9 +4,11 @@ type Props = {
   date: string;
   id: number;
   length: number;
+  before: string;
+  after: string;
 };
 
-const Pause: React.FC<Props> = ({ date, id, length }) => {
+const Pause: React.FC<Props> = ({ date, id, length, before, after }) => {
   const splitDate: string = date.split("T")[0]; //"2024-04-18"
   const displayDate: string =
     splitDate.split("-")[1] +
@@ -16,11 +18,16 @@ const Pause: React.FC<Props> = ({ date, id, length }) => {
     splitDate.split("-")[0];
 
   return (
-    <Link to={`/${id}`} className="pause">
-      <h3>
-        {length}-minute meditation on {displayDate}
-      </h3>
-    </Link>
+    <div className="pause">
+      <Link to={`/${id}`} className="link">
+        <p>
+          {displayDate} ({length}-minutes):
+        </p>
+        <p>
+          From "{before}" to "{after}"
+        </p>
+      </Link>
+    </div>
   );
 };
 

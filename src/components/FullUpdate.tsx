@@ -21,7 +21,7 @@ const FullUpdate: React.FC<Props> = ({
 }) => {
   return (
     <div className="create-container">
-      <Form action={action} method={method}>
+      <Form action={action} method={method} className="create-form">
         <label htmlFor="length">
           How many minutes did you meditate?
           <input
@@ -29,33 +29,36 @@ const FullUpdate: React.FC<Props> = ({
             name="length"
             id="length"
             defaultValue={defaultval_length}
+            className="form-input"
           />
         </label>
         <label htmlFor="before">
-          How did you feel before?
+          How did you feel before (in five words or less)?
           <input
             type="text"
             name="before"
             id="before"
             defaultValue={defaultval_before}
+            className="form-input"
           />
         </label>
         <label htmlFor="after">
-          How did you feel after?
+          How did you feel after (in five words or less)?
           <input
             type="text"
             name="after"
             id="after"
             defaultValue={defaultval_after}
+            className="form-input"
           />
         </label>
         <label htmlFor="thoughts">
-          What thoughts came up?
-          <input
-            type="text"
+          Did any thoughts come up?
+          <textarea
             name="thoughts"
             id="thoughts"
             defaultValue={defaultval_thoughts}
+            className="form-input"
           />
         </label>
         <button>{buttontxt}</button>

@@ -14,6 +14,11 @@
 - TypeScript
 - TBD ETC
 
+## Assets from:
+
+- Unsplash
+- Pixabay
+
 ## Wireframes
 
 ![Mobile Landing Page](https://i.imgur.com/e70GDZx.jpeg)
