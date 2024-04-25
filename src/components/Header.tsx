@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 
 function Header() {
-  // const hamMenu = document.querySelector("hamburger-menu");
-  // const offScreenMenu = document.querySelector("offscreen-menu");
-  // hamMenu?.addEventListener("click", () => {
-  //   hamMenu?.classList.toggle("active");
-  //   offScreenMenu?.classList.toggle("active");
-  // });
-
   return (
     <div className="header">
       <nav>

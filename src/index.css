@@ -92,6 +92,7 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(1) {
   margin-left: 25px;
   top: 55%;
   transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.3s ease;
 }
 
 nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(2) {
@@ -102,6 +103,7 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
   margin-left: 25px;
   top: 45%;
   transform: translate(-50%, 50%) rotate(-45deg);
+  transition: 0.3s ease;
 }
 
 .hamburger-menu:hover {
@@ -319,6 +321,24 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
 }
 
 @media screen and (min-width: 975px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .offscreen-menu {
+    background: none;
+    height: 15%;
+    position: unset;
+    padding: 20px;
+  }
+
+  .offscreen-menu > .link {
+    padding: 3px 0;
+    text-align: left;
+    color: var(--flair);
+    font-size: 20px;
+  }
+
   body {
     background-size: 150%;
   }
@@ -339,6 +359,10 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
 @media screen and (min-width: 1300px) {
   body {
     background-size: 100%;
+  }
+
+  .offscreen-menu > .link {
+    font-size: 24px;
   }
 
   .landing-container,
