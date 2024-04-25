@@ -22,7 +22,10 @@ const Timer: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const newPause: any = allPauses[allPauses.length - 1];
+    const sortedPauses: any = allPauses.sort((a: any, b: any) => {
+      return a.id - b.id;
+    });
+    const newPause: any = sortedPauses[sortedPauses.length - 1];
     if (newPause) {
       setCountdown(newPause.length * 60);
     }
