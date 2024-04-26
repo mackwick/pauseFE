@@ -139,10 +139,17 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
   top: 75%;
 }
 
-.offscreen-menu > .link {
-  padding: 20px 0 0 20px;
+.offscreen-menu > .link,
+.offscreen-menu > button {
+  padding: 20px 15px 0 20px;
   color: var(--light);
   font-size: 26px;
+  background: none;
+  border: none;
+}
+
+.offscreen-menu > .cl-rootBox {
+  margin: 20px auto 0 auto;
 }
 
 .header > nav {
