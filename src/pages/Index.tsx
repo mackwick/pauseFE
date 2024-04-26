@@ -2,6 +2,7 @@ import Pause from "../components/Pause";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Pagination from "../components/Pagination";
+import Header from "../components/Header";
 
 const Index: React.FC = () => {
   const allPauses: any = useLoaderData();
@@ -13,24 +14,27 @@ const Index: React.FC = () => {
   const currentPosts: any = allPauses.slice(firstPostIndex, lastPostIndex);
 
   return (
-    <div className="index">
-      <h2>Your Meditation Sessions</h2>
+    <div>
+      <Header />
+      <div className="index">
+        <h2>Your Meditation Sessions</h2>
 
-      {currentPosts.map((pause: any) => (
-        <Pause
-          date={pause.date}
-          id={pause.id}
-          length={pause.length}
-          key={pause.id}
-          before={pause.before}
-          after={pause.after}
+        {currentPosts.map((pause: any) => (
+          <Pause
+            date={pause.date}
+            id={pause.id}
+            length={pause.length}
+            key={pause.id}
+            before={pause.before}
+            after={pause.after}
+          />
+        ))}
+        <Pagination
+          totalPosts={allPauses.length}
+          postsOnPage={postPerPage}
+          setCurrentPage={setCurrentPage}
         />
-      ))}
-      <Pagination
-        totalPosts={allPauses.length}
-        postsOnPage={postPerPage}
-        setCurrentPage={setCurrentPage}
-      />
+      </div>
     </div>
   );
 };

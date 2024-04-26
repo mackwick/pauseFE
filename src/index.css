@@ -210,7 +210,7 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
 
 .timer-container > h2 {
   font-size: 150px;
-  color: whitesmoke;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /********* CREATE PT. 2 FORM **********/
@@ -426,7 +426,6 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
 
   .timer-container > h2 {
     font-size: 275px;
-    color: rgba(255, 255, 255, 0.72);
   }
 
   .pause p {
