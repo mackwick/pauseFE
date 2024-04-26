@@ -12,7 +12,6 @@
 - React-Dom
 - React-Router-Dom
 - TypeScript
-- TBD ETC
 
 ## Assets from:
 
@@ -26,4 +25,11 @@
 
 ## Component Heirarchy
 
-XXXXXXX
+![Component Tree](https://i.imgur.com/gTZfBsn.jpeg)
+
+## Challenges (mostly cool learning opps)
+
+- Creating a three-part create process to include the Timer
+- The Timer itself
+- Identifying super-specific types for TS
+- Pagination
