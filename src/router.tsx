@@ -16,23 +16,51 @@ import {
   deleteAction,
   updateAction,
 } from "./actions";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Landing />} />
       <Route path="/pause" element={<Time />} loader={indexLoader} />
-      <Route path="index" element={<Index />} loader={indexLoader} />
-      <Route path="/:id" element={<Show />} loader={showLoader} />
       <Route path="/create" action={createAction} />
+      <Route path="/update/:id" action={updateAction} />
+      <Route path="/delete/:id" action={deleteAction} />
       <Route
         path="/create2/:id"
         element={<Create2 />}
         action={create2Action}
         loader={showLoader}
       />
-      <Route path="/update/:id" action={updateAction} />
-      <Route path="/delete/:id" action={deleteAction} />
+
+      <Route
+        path="/index"
+        element={
+          <>
+            <SignedIn>
+              <Index />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        }
+        loader={indexLoader}
+      />
+      <Route
+        path="/:id"
+        element={
+          <>
+            <SignedIn>
+              <Show />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        }
+        loader={showLoader}
+      />
     </Route>
   )
 );

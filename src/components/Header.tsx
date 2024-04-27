@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 function Header() {
   return (
     <div className="header">
       <nav>
         <div className="offscreen-menu">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           <Link to="/" className="link">
             Home
           </Link>

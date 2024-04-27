@@ -3,13 +3,19 @@ import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Pagination from "../components/Pagination";
 import Header from "../components/Header";
+import { useUser } from "@clerk/clerk-react";
 
 const Index: React.FC = () => {
   const allPauses: any = useLoaderData();
+  const { user } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
   const postPerPage = 12;
 
-  const sortedPauses: any = allPauses.sort((a: any, b: any) => {
+  const usersPauses = allPauses.filter((x: any) => {
+    return x.user === user?.id;
+  });
+
+  const sortedPauses: any = usersPauses.sort((a: any, b: any) => {
     return b.id - a.id;
   });
   const lastPostIndex = currentPage * postPerPage;
