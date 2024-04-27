@@ -109,6 +109,7 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
 .hamburger-menu:hover {
   cursor: pointer;
 }
+
 .hamburger-menu {
   margin-top: 30px;
   padding-top: 20px;
@@ -163,7 +164,8 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
   padding: 20px;
 }
 
-.offscreen-menu > .link:hover {
+.offscreen-menu > .link:hover,
+.offscreen-menu button:hover {
   color: #b5dade;
 }
 
@@ -344,8 +346,13 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
     display: none;
   }
 
-  .offscreen-menu > .link:hover {
+  .offscreen-menu > .link:hover,
+  .offscreen-menu > button:hover {
     color: #7d9c9f;
+  }
+
+  .offscreen-menu > .cl-rootBox {
+    margin: 20px 0 5px 0;
   }
 
   .offscreen-menu {
@@ -355,7 +362,8 @@ nav:has(#ham-toggle:checked) .hamburger-menu span:nth-child(3) {
     padding: 20px;
   }
 
-  .offscreen-menu > .link {
+  .offscreen-menu > .link,
+  .offscreen-menu > button {
     padding: 3px 0;
     text-align: left;
     color: var(--flair);
