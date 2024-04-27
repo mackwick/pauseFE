@@ -11,7 +11,7 @@ export const createAction = async ({ request }: any) => {
     before: formData.get("before"),
     after: "",
     thoughts: "",
-    user: "seed",
+    user: formData.get("user"),
   };
 
   await fetch(`${URL}`, {
@@ -34,7 +34,7 @@ export const create2Action = async ({ request, params }: any) => {
     before: formData.get("before"),
     after: formData.get("after"),
     thoughts: formData.get("thoughts"),
-    user: "seed",
+    user: formData.get("user"),
   };
 
   await fetch(`${URL}/${id}`, {
@@ -57,7 +57,7 @@ export const updateAction = async ({ request, params }: any) => {
     before: formData.get("before"),
     after: formData.get("after"),
     thoughts: formData.get("thoughts"),
-    user: "seed",
+    user: formData.get("user"),
   };
 
   await fetch(`${URL}/${id}`, {

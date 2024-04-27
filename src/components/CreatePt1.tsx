@@ -1,4 +1,5 @@
 import { Form, FormMethod } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
 type Props = {
   action: string;
@@ -7,9 +8,20 @@ type Props = {
 };
 
 const Create1: React.FC<Props> = ({ action, method, buttontxt }) => {
+  const { user } = useUser();
   return (
     <div className="create-container">
       <Form action={action} method={method} className="create-form">
+        <label htmlFor="user" className="hide">
+          User
+          <input
+            type="text"
+            name="user"
+            id="user"
+            defaultValue={user?.id || "non-user"}
+            className="hide"
+          />
+        </label>
         <label htmlFor="before">
           How are you doing (in five words or less)?
           <input type="text" name="before" id="before" className="form-input" />

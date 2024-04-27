@@ -1,4 +1,5 @@
 import { Form, FormMethod } from "react-router-dom";
+import { useUser } from "@clerk/clerk-react";
 
 type Props = {
   action: string;
@@ -19,9 +20,21 @@ const Create2Form: React.FC<Props> = ({
   defaultval_length,
   defaultval_thoughts,
 }) => {
+  const { user } = useUser();
   return (
     <div className="create-container">
       <Form action={action} method={method} className="create-form">
+        <label htmlFor="user" className="hide">
+          User
+          <input
+            type="text"
+            name="user"
+            id="user"
+            defaultValue={user?.id || "non-user"}
+            className="hide"
+          />
+        </label>
+
         <label htmlFor="length" className="hide">
           How many minutes did you meditate?
           <input

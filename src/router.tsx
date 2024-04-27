@@ -23,6 +23,9 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="" element={<Landing />} />
       <Route path="/pause" element={<Time />} loader={indexLoader} />
+      <Route path="/create" action={createAction} />
+      <Route path="/update/:id" action={updateAction} />
+      <Route path="/delete/:id" action={deleteAction} />
       <Route
         path="/create2/:id"
         element={<Create2 />}
@@ -58,9 +61,6 @@ const router = createBrowserRouter(
         }
         loader={showLoader}
       />
-      <Route path="/create" action={createAction} />
-      <Route path="/update/:id" action={updateAction} />
-      <Route path="/delete/:id" action={deleteAction} />
     </Route>
   )
 );

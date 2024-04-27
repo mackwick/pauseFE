@@ -12,6 +12,7 @@
 - React-Dom
 - React-Router-Dom
 - TypeScript
+- Clerk
 
 ## Assets from:
 
