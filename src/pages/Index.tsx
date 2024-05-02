@@ -9,7 +9,7 @@ const Index: React.FC = () => {
   const allPauses: any = useLoaderData();
   const { user } = useUser();
   const [currentPage, setCurrentPage] = useState(1);
-  const postPerPage = 12;
+  const postPerPage = 10;
 
   const usersPauses = allPauses.filter((x: any) => {
     return x.user === user?.id;
@@ -39,7 +39,7 @@ const Index: React.FC = () => {
           />
         ))}
         <Pagination
-          totalPosts={allPauses.length}
+          totalPosts={usersPauses.length}
           postsOnPage={postPerPage}
           setCurrentPage={setCurrentPage}
         />

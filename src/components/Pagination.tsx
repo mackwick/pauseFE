@@ -17,21 +17,25 @@ const Pagination: React.FC<Props> = ({
     pages.push(i);
   }
 
-  return (
-    <div>
-      {pages.map((page, index) => {
-        return (
-          <button
-            key={index}
-            onClick={() => setCurrentPage(page)}
-            className="page-button"
-          >
-            {page}
-          </button>
-        );
-      })}
-    </div>
-  );
+  if (pages.length <= 1) {
+    return <div></div>;
+  } else {
+    return (
+      <div>
+        {pages.map((page, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(page)}
+              className="page-button"
+            >
+              {page}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
 };
 
 export default Pagination;
