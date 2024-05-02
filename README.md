@@ -1,7 +1,7 @@
 # Pause: A Meditation App
 
 - **Mackenzie Wicker - General Assembly Capstone Project**
-- **Description: A mobile-first web application for tracking your daily meditation. Includes a timer, journal entries, a question of the day to meditate on, and reminders about why you started meditating when you miss a few days.**
+- **Description: A web application for tracking your daily meditation. Includes a timer created with useState()/useEffect() hooks, option for journal entries ("thoughts"), log of previous meditation sessions, and user management through Clerk.**
 
 - GitHub: https://github.com/mackwick/pauseFE.git
 - Deployed Frontend: https://takeapause.netlify.app/
@@ -13,11 +13,13 @@
 - React-Router-Dom
 - TypeScript
 - Clerk
+- Vite
 
 ## Assets from:
 
 - Unsplash
 - Pixabay
+- GoogleFonts
 
 ## Wireframes
 

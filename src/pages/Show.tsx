@@ -1,4 +1,4 @@
-import { useLoaderData, Form } from "react-router-dom";
+import { useLoaderData, Form, Link } from "react-router-dom";
 import Forms from "../components/FullUpdate";
 import { useState } from "react";
 import Header from "../components/Header";
@@ -51,8 +51,11 @@ const Show: React.FC = () => {
             />
           )}
           <div className="action-buttons">
+            <Link to="/index">
+              <button className="go-back-button">Go Back</button>
+            </Link>
             <button className="go-back-button" onClick={toggleForm}>
-              {showForm ? "Go back" : "Edit"}
+              {showForm ? "Nevermind" : "Edit"}
             </button>
 
             <Form
