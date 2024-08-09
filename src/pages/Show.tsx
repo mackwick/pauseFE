@@ -54,7 +54,10 @@ const Show: React.FC = () => {
             <Link to="/index">
               <button className="go-back-button">Go Back</button>
             </Link>
-            <button className="go-back-button" onClick={toggleForm}>
+            <button
+              className="go-back-button go-back-button-NVM"
+              onClick={toggleForm}
+            >
               {showForm ? "Nevermind" : "Edit"}
             </button>
 
